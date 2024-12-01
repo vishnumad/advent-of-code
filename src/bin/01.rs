@@ -3,7 +3,7 @@ use std::collections::HashMap;
 advent_of_code::solution!(1);
 
 pub fn part_one(input: &str) -> Option<i32> {
-    let input_lines = input.trim().split('\n').into_iter();
+    let input_lines = input.trim().split('\n');
 
     let mut left: Vec<i32> = Vec::new();
     let mut right: Vec<i32> = Vec::new();
@@ -31,7 +31,7 @@ pub fn part_one(input: &str) -> Option<i32> {
 }
 
 pub fn part_two(input: &str) -> Option<i32> {
-    let input_lines = input.trim().split('\n').into_iter();
+    let input_lines = input.trim().split('\n');
 
     let mut left: Vec<i32> = Vec::new();
     let mut right_count: HashMap<i32, i32> = HashMap::new();
