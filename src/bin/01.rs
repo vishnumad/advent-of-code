@@ -8,7 +8,7 @@ pub fn part_one(input: &str) -> Option<i32> {
     let mut left: Vec<i32> = Vec::new();
     let mut right: Vec<i32> = Vec::new();
 
-    input_lines.for_each(|line| {
+    for line in input_lines {
         let parts: Vec<i32> = line
             .split_whitespace()
             .map(|i| i.parse().unwrap())
@@ -16,7 +16,7 @@ pub fn part_one(input: &str) -> Option<i32> {
 
         left.push(parts[0]);
         right.push(parts[1]);
-    });
+    }
 
     left.sort_unstable();
     right.sort_unstable();
@@ -36,10 +36,10 @@ pub fn part_two(input: &str) -> Option<i32> {
     let mut left: Vec<i32> = Vec::new();
     let mut right_count: HashMap<i32, i32> = HashMap::new();
 
-    input_lines.for_each(|line| {
+    for line in input_lines {
         let parts: Vec<i32> = line
             .split_whitespace()
-            .map(|i| i.parse().unwrap())
+            .map(|i| i.parse::<i32>().unwrap())
             .collect();
 
         left.push(parts[0]);
@@ -47,7 +47,7 @@ pub fn part_two(input: &str) -> Option<i32> {
             .entry(parts[1])
             .and_modify(|count| *count += 1)
             .or_insert(1);
-    });
+    }
 
     let sum = left
         .into_iter()
